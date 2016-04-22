@@ -18,6 +18,8 @@
 <body>
 
 	<a href="allposts.php">Sve objave</a><br>
+	<a href="mostpopular.php">Najpopularnija objava</a><br>
+
 	 
 </body>
 </html>
