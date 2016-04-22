@@ -9,18 +9,14 @@
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
         echo "Broj objave: " . $row["id"]. "<br> - Objavio: " . $row["username"]. "<br> - Post: " . $row["post"]. "<br>". " - Broj pregleda:". $row['broj_pregleda'] ."<br> - Datum: " . $row['datum'] . "<br>";
+		$broj = $row['broj_pregleda'];
+		$broj++;
+		$sql = "UPDATE mrznja.postovi SET broj_pregleda = $broj";
+		$result = mysqli_query($db, $sql);
        	 }
 	} else {
 	    echo "0 objava";
 	}
 
-	$broj = $row['broj_pregleda'];
-    $broj++;
-    $sql = "INSERT INTO mrznja.postovi('broj_pregleda') VALUES('$broj') WHERE id=$id";
-    $result = mysqli_query($db, $sql);
-      if(!$result){
-        echo ' ne radi brojac';
-        	}else{
-        		echo 'povecao se';
-        	}
+    
  ?>
