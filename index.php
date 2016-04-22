@@ -1,5 +1,9 @@
 <?php 
-	include 'includes/db.php';
+include 'includes/db.php';
+    session_start();
+    
+    //Za predaju mržnje
+  include 'includes/objava.php';
  ?>
 <!DOCTYPE html>
  <html>
@@ -37,7 +41,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" href="#">
+        <img alt="MrzimTo" src="img/square.png">
+      </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -72,35 +78,27 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-offset-1 col-md-8">
+        <div class="col-md-offset-1 col-md-10 wrapper">
             <form action="index.php" method="POST" charset="utf-8">
               <div class="form-group col-xs-4">
                 <label class="control-label col-sm-2" for="username">Nadimak:</label><br> 
-                <input class="form-control" type="text" id="username" name="username"></div><br>
+                <input class="form-control" type="text" id="username" name="username"></div>
              <div class="form-group col-xs-5">
                 <label class="control-label col-sm-2" for="post">Post:</label><br>
-                <textarea class="form-control" rows="3" name="post" id="post" onkeyup="countChar(this)"></textarea></div><br>
-              <p>Preostalo znakova:</p><div id="charNum"></div>
-             <div class="form-group col-xs-2"><label class="control-label col-sm-2" for="vercode">Unesite kod:</label> <img src="includes/captcha.php" class="nowidth"> &nbsp <br> <input class="form-control" type="text" name="vercode" /></div><br>
-              <input type="submit" name="submit" value="Objavi">
+                <textarea class="form-control" rows="3" name="post" id="post" onkeyup="countChar(this)"></textarea></div>
+              <div class="control-label col-sm-4">
+                <p style="float:left;">Preostalo znakova:&nbsp</p>
+                <div id="charNum">500</div></div>
+             <div class="form-group col-xs-2">
+                <label class="control-label" for="vercode">Unesite kod:</label> 
+                <img src="includes/captcha.php" class="nowidth"> &nbsp <input class="form-control" type="text" name="vercode" style="margin-top:10px;" /></div><br>
+                <button class="btn btn-hate btn-lg" type="submit" name="submit"><span class="glyphicon glyphicon-fire"></span> Mrzi!</button>
             </form>
+
+            
         </div>
     </div><!-- end row -->
 </div><!-- end container -->
 
-
-
-  
-
-
-
- 	<?php 
-		session_start();
-		
-		//Za predaju mržnje
- 		include 'includes/objava.php';
- 	 ?>
-		
- 	
  </body>
  </html>

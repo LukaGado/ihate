@@ -1,29 +1,43 @@
 body{
-	background: red;
-	margin-top:75px;
+  background: #ffffff;
+  margin-top:75px;
+}
+.btn-hate { 
+  color: #ffffff;
+  background-color: #C12E2A;
+  background-image: linear-gradient(to bottom, #C12E2A, #C12E2A);
+  background-position: 0 0;
+  border-color: #B92C28 #B92C28 #B92C28;
+}
+.navbar-brand img {
+  margin-top: -5px;
 }
 .navbar-default {
-	margin:0 auto;
-	width:80%;
+  margin:0 auto;
+  width:80%;
+  border-top: none;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
 }
 .input-group {
-	width:250px;
+  width:250px;
 }
 .navbar-collapse ul li a {
-	color: #ffffff;
-	 text-decoration: none;
-	 display: block;
-	 padding: 15px 25px;
-	 font-family: 'Open Sans', sans-serif;
-	 font-weight: 700;
-	 text-transform: uppercase;
-	 font-size: 14px;
-	 position: relative;
-	  -webkit-transition: color .25s;
-	  -moz-transition: color .25s;
-	  -ms-transition: color .25s;
-	  -o-transition: color .25s;
-	  transition: color .25s;
+  color: #ffffff;
+   text-decoration: none;
+   display: block;
+   padding: 15px 25px;
+   font-family: 'Open Sans', sans-serif;
+   font-weight: 700;
+   text-transform: uppercase;
+   font-size: 14px;
+   position: relative;
+    -webkit-transition: color .25s;
+    -moz-transition: color .25s;
+    -ms-transition: color .25s;
+    -o-transition: color .25s;
+    transition: color .25s;
 }
 .navbar-collapse ul li a:hover {
   color: #333333;
@@ -50,7 +64,7 @@ body{
   bottom: 0;
   height: 3px;
   width: 0;
-  background: #ea8651;
+  background: #C12E2A;
   -webkit-transition: width .25s;
   -moz-transition: width .25s;
   -ms-transition: width .25s;
@@ -68,24 +82,27 @@ body{
   float: none;
 }
 .nowidth {
-  width:100%;
+  width:75%;
 }
 
 /* POSTS MRRRRMMRMRRMRMRMRRMMMRM */
 
 .hate-container {
+  width: 84.667%;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
+  align-items: center;
   height: auto;
-  background-color: lightgrey;
+  border: 1px solid #CCC;
 }
 .hate-item {
   background-color: cornflowerblue;
-  width: 30%;
   height: auto;
-  margin: 10px;
+  max-width: 40%;
+  min-width:180px;
+  margin: 10px auto;
 }
 .hate-post p {
   word-wrap: break-word;
