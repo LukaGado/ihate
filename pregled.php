@@ -1,3 +1,22 @@
+<?php 
+	// connect to the database
+	include 'includes/db.php';
+     $post_id= $_GET['id'];  // get the post title in a variable     
+     $cookie_name = str_replace(" ", "-", $post_id); //create cookie name        
+
+	//check for the session and cookie  
+     if (!isset($_SESSION[$post_id]) && !isset($_COOKIE [$cookie_name]) ) {         
+
+	//if no cookie and no session then set a cookie and a session for the post
+     $_SESSION[$post_id] = $post_id; 
+     setcookie($cookie_name, $post_id, time() + (86400 * 7), "/"); // 86400 = 1 day 
+     $_COOKIE[$cookie_name] = $post_id;       
+
+	//run a query to increment the views count for the post by 1 
+     $query="UPDATE mrznja.postovi SET broj_pregleda = broj_pregleda+1 WHERE id ='$post_id'"; 
+     mysqli_query($db, $query); 
+   } 
+ ?>
 <!DOCTYPE html>
  <html>
  <head>
@@ -62,7 +81,6 @@
     <div class="row">
         <div class="col-md-offset-1 col-md-8 hate-container">
             <?php 
-                include 'includes/db.php';
                 $id = $_GET['id'];
 
                 $sql = "SELECT * FROM mrznja.postovi WHERE id=$id";
@@ -72,10 +90,6 @@
                 // output data of each row
                 while($row = mysqli_fetch_assoc($result)) {
                     echo "Broj objave: " . $row["id"]. "<br> - Objavio: " . $row["username"]. "<br> - Post: " . $row["post"]. "<br>". " - Broj pregleda:". $row['broj_pregleda'] ."<br> - Datum: " . $row['datum'] . "<br>";
-                    $broj = $row['broj_pregleda'];
-                    $broj++;
-                    $sql = "UPDATE mrznja.postovi SET broj_pregleda = $broj";
-                    $result = mysqli_query($db, $sql);
                      }
                 } else {
                     echo "0 objava";
