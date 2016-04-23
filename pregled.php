@@ -15,10 +15,23 @@
 	//run a query to increment the views count for the post by 1 
      $query="UPDATE mrznja.postovi SET broj_pregleda = broj_pregleda+1 WHERE id ='$post_id'"; 
      mysqli_query($db, $query); 
+
+     $_SESSION['id'] = $_GET['id'];
    } 
    include 'header.html';
  ?>
 
+
+    <script>
+      function countChar(val) {
+        var len = val.value.length;
+        if (len >= 500) {
+          val.value = val.value.substring(0, 500);
+        } else {
+          $('#charNum').text(500 - len);
+        }
+      };
+    </script>
 
 <!-- <div class="container">
     <div class="row"> -->
@@ -39,8 +52,49 @@
                 } else {
                     echo '0 Objava';
                 }
+                ?>
+                
+                <!-- KOMENTARI -->
+                <form action="pregled.php" method="POST" accept-charset="UTF-8">
+                    Korisničko ime: <input type="text" name="username" id="username">
+                    Komentar: <textarea name="komentar" id="komentar">Upišite komentar</textarea>
+                    <?php
+                        echo '<input type="hidden" name="id" id="id" value="'.$_GET['id'].'">';
+                     ?>
+                    <input type="submit" value="Komentiraj" name="odgovor">
+                </form>
 
+                
 
+                <?php  
+                    //Spremanje komentara pod odgovarajuci post_id
+                    if(isset($_POST['odgovor'])){
+                        $user = mysqli_real_escape_string($db, $_POST['username']);
+                        $id = $_POST['id'];
+                        if(empty($user)){
+                            $user = 'Anonimni ljuti komentator';
+                        }
+                        $komentar = mysqli_real_escape_string($db, $_POST['komentar']);
+                        if(empty($user) && empty($komentar)){
+                            echo 'Komentar ne može biti prazan!';
+                            header('Location: pregled.php?id='.$id);
+                        }elseif(strlen($komentar)>250){
+                            echo 'Komentar ne smije sadržavati više od 250 znakova!';
+                            header('Location: pregled.php?id='.$id);
+                        }else{
+                            $sql = "INSERT INTO  `mrznja`.`komentari` (`id` ,`post_id` ,`username` ,`komentar`) VALUES (NULL , '$id', '$user', '$komentar')";
+                            $result = mysqli_query($db, $sql);
+                            if(!$result){
+                                echo 'Greška prilikom postanja komentara!';
+                            }else{
+                                echo 'Uspješno ste postali komentar!';
+                                header('Location: pregled.php?id='.$id);
+                            }
+                        }
+                    }
+                ?>
+
+                 <?php 
                  //NEXT i PREV buttoni
                  $url = 'pregled.php?id=' . $id;
                  $sql = "SELECT * FROM mrznja.postovi WHERE id = (SELECT MAX(id) FROM mrznja.postovi)";
@@ -76,6 +130,26 @@
          </div>
    <!-- </div> end row -->
 <!-- </div> end container -->
+
+
+        
+        <?php 
+            //Ispis komentara
+            $id = $_GET['id'];
+            $sql = "SELECT * FROM mrznja.komentari WHERE post_id=$id ORDER BY ID DESC";
+            $result = mysqli_query($db, $sql);
+            if(!$result){
+                echo 'Greška prilikom dohvaćanja komentara';
+            }else{
+                while($row = mysqli_fetch_assoc($result)){
+                    echo '<br>#: ' . $row['id']. '<br>';
+                    echo 'Komentar: ' . $row['komentar'] . '<br>';
+                    echo 'Korisnik: ' . $row['username'] . '<br>';
+                }
+            }
+         ?>
+
+
 
 </body>
 
