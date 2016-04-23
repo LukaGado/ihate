@@ -14,7 +14,7 @@ body{
 }
 .navbar-default {
   margin:0 auto;
-  width:71%;
+  /* width:71%; */
   border-top: none;
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
@@ -77,6 +77,9 @@ body{
 .wrapper {
   border: 1px solid #CCC;
   padding: 20px;
+  margin: 0 auto;
+  float: none;
+  overflow: hidden; 
 }
 .form-group {
   float: none;
@@ -94,10 +97,15 @@ body{
   margin-top: 8px;
   margin-right: 15px;
 }
+.index-left {
+  margin: 0;
+  float:left;
+}
+.right-image {
+  float:right;
+}
 .right-image img {
-  float: right;
-  width: 400px;
-  margin-top: -430px;
+  max-width: 100%;
 }
 
 
