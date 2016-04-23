@@ -195,3 +195,22 @@ body{
   padding: 5px;
   border: 1px solid #C12E2A;
 }
+.single-hate a {
+  text-transform: uppercase;
+  padding: 8px;
+  background: #C12E2A;
+  color: #FFF;
+  margin: 0 10px;
+  border: 1px solid #FFF;
+  -webkit-transition: all .7s;
+  -moz-transition: all .7s;
+  -ms-transition: all .7s;
+  -o-transition: all .7s;
+  transition: all .7s;
+}
+.single-hate a:hover {
+  text-decoration: none;
+  color: #C12E2A;
+  background: #FFF;
+  border: 1px solid #C12E2A;
+}

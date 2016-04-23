@@ -59,7 +59,7 @@
 
 <!-- <div class="container">
     <div class="row"> -->
-        <div class="col-md-offset-1 col-md-8 wrapper">
+        <div class="col-md-offset-1 col-md-8 wrapper single-hate">
             <?php 
                 $id = $_GET['id'];
 
@@ -104,8 +104,8 @@
                         $prev--;
                         $nexturl = 'pregled.php?id=' . $next;
                         $prevurl = 'pregled.php?id=' . $prev;
-                        echo '<a href="'.$nexturl.'" title="Next button">Sljedeći</a>';
-                        echo '<a href="'.$prevurl.'" title="Previous button">Prijašnji</a>';
+                        echo '<a href="'.$nexturl.'" title="Next button"><span class="glyphicon glyphicon-chevron-left"></span>Sljedeći</a>';
+                        echo '<a href="'.$prevurl.'" title="Previous button">Prijašnji<span class="glyphicon glyphicon-chevron-right"></span></a>';
                       }
                     }
          
