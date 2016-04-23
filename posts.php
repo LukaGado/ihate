@@ -80,7 +80,10 @@
       $total_records = mysqli_num_rows($rs_result);  //count number of records
       $total_pages = ceil($total_records / $num_rec_per_page); 
 
-      
+      if($_GET['page'] < 1){
+        header("Location: posts.php?page=1");
+      }
+
       $url = $_GET['page'];
       if($total_pages == $url-1){
         $url = $_GET['page'];
