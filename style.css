@@ -14,7 +14,7 @@ body{
 }
 .navbar-default {
   margin:0 auto;
-  width:80%;
+  width:71%;
   border-top: none;
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
@@ -81,9 +81,26 @@ body{
 .form-group {
   float: none;
 }
+.form-control:focus {
+  border-color: #C12E2A;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(193,46,42, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(193,46,42, .6);
+}
 .nowidth {
   width:75%;
 }
+.hate-search {
+  margin-top: 8px;
+  margin-right: 15px;
+}
+.right-image img {
+  float: right;
+  width: 400px;
+  margin-top: -430px;
+}
+
+
 
 /* POSTS MRRRRMMRMRRMRMRMRRMMMRM */
 
@@ -98,12 +115,44 @@ body{
   border: 1px solid #CCC;
 }
 .hate-item {
-  background-color: cornflowerblue;
+  background-color: #C12E2A;
   height: auto;
   max-width: 40%;
   min-width:180px;
   margin: 10px auto;
+  color: #ccc;
+  padding: 5px;
+}
+.hate-item:hover {
+  border-color: #C12E2A;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(193,46,42, .6);
+          box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(193,46,42, .6);
 }
 .hate-post p {
   word-wrap: break-word;
+  overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   display: -webkit-box;
+   line-height: 16px;     /* fallback */
+   max-height: 32px;      /* fallback */
+   -webkit-line-clamp: 2; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}
+
+
+/* PREGLED MRRRRMMRMRRMRMRMRRMMMRM */
+
+.hate-post-full p {
+  word-wrap: break-word;
+}
+.hate-item-full {
+  background-color: #C12E2A;
+  height: auto;
+  max-width: 100%;
+  min-width:180px;
+  margin: 10px;
+  color: #ccc;
+  padding: 5px;
 }

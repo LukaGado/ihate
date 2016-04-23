@@ -6,7 +6,7 @@ if(isset($_POST['submit'])){
 			$broj = 1;
 
  			if ($_POST["vercode"] != $_SESSION["vercode"] OR $_SESSION["vercode"]=='' OR $_POST['post'] == '')  { 
-				echo  'Morate popuniti sva polja!';
+				echo  '<div class="alert alert-danger" role="alert">Morate popuniti sva polja!</div>';
 				header("Refresh:2;url=index.php");
 				}else{ 	
 					if($username == ''){
@@ -18,7 +18,7 @@ if(isset($_POST['submit'])){
 					if(!$result){
 						echo 'Došlo je do pogreške!';
 					}else{
-						echo 'Uspješno ste objavili post!';
+						echo '<div class="alert alert-success" role="alert">Uspješno ste objavili post!</div>';
 						header("Refresh:2;url=index.php");
 					}
  				}
