@@ -122,6 +122,15 @@ body{
 .right-image img {
   max-width: 100%;
 }
+.alert {
+  margin: 5px auto;
+  float: none;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
 
 
 
