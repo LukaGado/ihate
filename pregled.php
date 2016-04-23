@@ -51,7 +51,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="posts.php">Haterz</a></li>
+        <li><a href="posts.php?page=1">Haterz</a></li>
         
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
