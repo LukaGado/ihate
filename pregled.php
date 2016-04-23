@@ -16,7 +16,6 @@
      $query="UPDATE mrznja.postovi SET broj_pregleda = broj_pregleda+1 WHERE id ='$post_id'"; 
      mysqli_query($db, $query); 
 
-     $_SESSION['id'] = $_GET['id'];
    } 
    include 'header.html';
  ?>
