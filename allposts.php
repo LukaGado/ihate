@@ -29,7 +29,7 @@
  			echo 'Korisnik: ' . $row['username'] . '<br>';
  			echo 'Objava: ' . $row['post'] . '<br>';
  			echo 'Datum objave: ' . $row['datum'] . '<br>';
- 			echo '<form action="admin.php" method="post" accept-charset="utf-8">
+ 			echo '<form action="allposts.php" method="post" accept-charset="utf-8">
  				  <input type="hidden" value="'.$row['id'].'" name="id">
  				  <input type="submit" value="Obriši" name="delete">
  				  </form><br>';
@@ -38,14 +38,13 @@
 
 	if(isset($_POST['delete'])){
  		$id = $_POST['id'];
- 		echo $id;
  		$sql = "DELETE FROM mrznja.postovi WHERE id = $id";
  		$result = mysqli_query($db, $sql);
  		if(!$result){
  			echo 'ne radi';
  		}else{
- 			echo 'Uspješno ste obrisali oglas '. $id;
-			header("Refresh:2;url=admin.php");
+ 			echo '<br>Uspješno ste obrisali oglas '. $id;
+			header("Refresh:2;url=allposts.php");
  		}
  	}
 
