@@ -52,27 +52,7 @@
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
         <li><a href="posts.php">Haterz</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Falling Haterz <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      <div class="col-lg-5" style="float:right">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="traži...">
-          <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Traži!</button>
-          </span>
-      </div><!-- /input-group -->
-      </div>
+        
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
