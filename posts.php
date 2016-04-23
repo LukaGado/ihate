@@ -52,7 +52,26 @@
             <?php 
 				include 'includes/db.php';
 
-				$sql = "SELECT * FROM mrznja.postovi ORDER BY id DESC limit 0,50";
+        //PAGINACIJA
+        $rec_limit = 10;
+        $sql = "SELECT count(id) FROM mrznja.postovi";
+        $retval = mysqli_query($db, $sql);
+        if(!$retval) {
+            die('Greška kod paginacije: ' . mysql_error());
+         }
+         $row = mysqli_fetch_array($retval, MYSQL_NUM );
+         $rec_count = $row[0];
+
+         if( isset($_GET{'page'} ) ) {
+            $page = $_GET{'page'} + 1;
+            $offset = $rec_limit * $page ;
+         }else {
+            $page = 0;
+            $offset = 0;
+         }
+
+         $left_rec = $rec_count - ($page * $rec_limit);
+				 $sql = "SELECT * FROM mrznja.postovi ORDER BY id DESC LIMIT $offset, $rec_limit";
 				$result = mysqli_query($db, $sql);
 				
 				if (mysqli_num_rows($result) > 0) {
@@ -67,6 +86,20 @@
 				} else {
 				    echo "0 objava";
 				}
+
+         if( $page > 0 ) {
+            $last = $page - 2;
+            echo "<a href = \"$_PHP_SELF?page = $last\">Prijašnja</a> |";
+            echo "<a href = \"$_PHP_SELF?page = $page\">Sljedeća</a>";
+         }else if( $page == 0 ) {
+            echo "<a href = \"$_PHP_SELF?page = $page\">Sljedeća</a>";
+         }else if( $left_rec < $rec_limit ) {
+            $last = $page - 2;
+            echo "<a href = \"$_PHP_SELF?page = $last\">Prijašnja</a>";
+         }
+         
+         mysql_close($conn);
+
 			 ?>
         </div>
     </div><!-- end row -->
