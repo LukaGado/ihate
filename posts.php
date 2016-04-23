@@ -77,11 +77,13 @@
 				if (mysqli_num_rows($result) > 0) {
 			    // output data of each row
 			    while($row = mysqli_fetch_assoc($result)) {
+            $text = $row['post'];
+            $novitext = wordwrap($text, 28, "<br />\n");
 			    	echo '<div class="hate-item">';
-			        echo '<div class=" hate-id">' . $row["id"]. "</div>". '<div class="hate-author"> - Objavio: ' . $row["username"]. "</div>" . '<div class="hate-post"> - Post: <br>' .'<p>'. $row["post"].'</p>'. "</div>".  "<br>". '<div class="hate-counter"> - Broj pregleda:'. $row['broj_pregleda'] . '</div>' . '<div class="hate-date"> - Datum: ' . $row['datum'] .'</div>';
+			        echo '<div class=" hate-id">' . $row["id"]. "</div>". '<div class="hate-author"> - Objavio: ' . $row["username"]. "</div>" . '<div class="hate-post"> - Post: <br>' .'<p>'. $novitext .'</p>'. "</div>".  "<br>". '<div class="hate-counter"> - Broj pregleda:'. $row['broj_pregleda'] . '</div>' . '<div class="hate-date"> - Datum: ' . $row['datum'] .'</div>';
 			        //Stvaranje URL-a
 						$url = 'pregled.php?id=' . $row['id'];
-						echo '<div class="hate-see-more"><a href="' . $url . '">Pogledajte objavu</a></div>';
+						echo '<div class="hate-see-more"><a href="' . $url . '">Više</a></div>';
 						echo '</div>';		}		 
 				} else {
 				    echo "0 objava";
