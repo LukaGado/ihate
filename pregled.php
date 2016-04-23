@@ -70,7 +70,7 @@
                 // Za svaku objavu
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="hate-item-full">';
-                     echo '<div class=" hate-id"> Broj objave: ' . $row["id"]. "</div>". '<div class="hate-author"> - Objavio: ' . $row["username"]. "</div>" . '<div class="hate-post-full"> - Post: <br>' .'<p>'. $row["post"].'</p>'. "</div>".  "<br>". '<div class="hate-counter"> - Broj pregleda:'. $row['broj_pregleda'] . '</div>' . '<div class="hate-date"> - Datum: ' . $row['datum'] .'</div>';
+                     echo '<div class=" hate-id">' . $row["id"]. "</div>". '<div class="hate-author"> - Objavio: ' . $row["username"]. "</div>" . '<div class="hate-post-full"> - Post: <br>' .'<p>'. $row["post"].'</p>'. "</div>".  "<br>". '<div class="hate-counter"> - Broj pregleda:'. $row['broj_pregleda'] . '</div>' . '<div class="hate-date"> - Datum: ' . $row['datum'] .'</div>';
                      echo '</div>';   
                    }
                     
