@@ -73,9 +73,8 @@
                      echo '<div class=" hate-id">' . $row["id"]. "</div>". '<div class="hate-author"> - Objavio: ' . $row["username"]. "</div>" . '<div class="hate-post-full"> - Post: <br>' .'<p>'. $row["post"].'</p>'. "</div>".  "<br>". '<div class="hate-counter"> - Broj pregleda:'. $row['broj_pregleda'] . '</div>' . '<div class="hate-date"> - Datum: ' . $row['datum'] .'</div>';
                      echo '</div>';   
                    }
-                    
                 } else {
-                    echo "0 objava";
+                    echo '0 Objava';
                 }
 
 
@@ -104,15 +103,12 @@
                         $prev--;
                         $nexturl = 'pregled.php?id=' . $next;
                         $prevurl = 'pregled.php?id=' . $prev;
-                        echo '<a href="'.$nexturl.'" title="Next button"><span class="glyphicon glyphicon-chevron-left"></span>Sljedeći</a>';
+                        echo '<a href="'.$nexturl.'" title="Next button" id="next" name="next"><span class="glyphicon glyphicon-chevron-left"></span>Sljedeći</a>';
                         echo '<a href="'.$prevurl.'" title="Previous button">Prijašnji<span class="glyphicon glyphicon-chevron-right"></span></a>';
                       }
                     }
          
-                 }
-
-
-                
+                 }  
              ?>
          </div>
    <!-- </div> end row -->
