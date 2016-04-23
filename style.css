@@ -128,16 +128,15 @@ body{
 /* POSTS MRRRRMMRMRRMRMRMRRMMMRM */
 
 .hate-id {
-  background: #C12E2A;
-  color: #FFF;
+  background: #FFF;
+  color: #C12E2A;
   padding: 5px;
   display: inline;
-  border: 1px solid #FFF;
+  border: 1px solid #C12E2A;
   border-radius: 15px;
 
 }
 .hate-container {
-  width: 84.667%;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-wrap: wrap;
@@ -147,14 +146,14 @@ body{
   border: 1px solid #CCC;
 }
 .hate-item {
-  background-color: #C12E2A;
+  background: rgba(248, 248, 248, .4);
   height: auto;
   max-width: 40%;
   min-width:180px;
   margin: 10px auto;
-  color: #ccc;
-  padding: 5px;
-
+  color: #777;
+  padding: 10px;
+  border: 1px solid #C12E2A;
   -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
        -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
           transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
@@ -187,11 +186,12 @@ body{
   word-wrap: break-word;
 }
 .hate-item-full {
-  background-color: #C12E2A;
+  background: rgba(248, 248, 248, .4);
   height: auto;
   max-width: 100%;
   min-width:180px;
   margin: 10px;
-  color: #ccc;
+  color: #777;
   padding: 5px;
+  border: 1px solid #C12E2A;
 }
