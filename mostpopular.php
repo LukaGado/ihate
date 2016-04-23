@@ -22,7 +22,7 @@
 		}
 	} */
 
-	$sql = "SELECT id, username, post, MAX(broj_pregleda), datum FROM mrznja.postovi";
+	$sql = "SELECT id, username, post, broj_pregleda, MAX(broj_pregleda), datum FROM mrznja.postovi";
 	$result = mysqli_query($db, $sql);
 	if(!$result){
 		echo 'Greška kod dohvaćanja najvećeg broja pregleda!';
