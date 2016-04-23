@@ -62,7 +62,7 @@ body{
 }
 .navbar-collapse ul li a:after {
   content: "";
-  display: block;
+  display: none;
   position: absolute;
   right: -3px;
   top: 19px;
