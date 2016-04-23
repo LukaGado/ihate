@@ -34,7 +34,7 @@
 
  </head>
  <body>
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top col-md-offset-1 col-md-8">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -57,9 +57,9 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-offset-1 col-md-8 hate-container">
+<!-- <div class="container">
+    <div class="row"> -->
+        <div class="col-md-offset-1 col-md-8 wrapper">
             <?php 
                 $id = $_GET['id'];
 
@@ -115,8 +115,8 @@
                 
              ?>
          </div>
-    </div><!-- end row -->
-</div><!-- end container -->
+   <!-- </div> end row -->
+<!-- </div> end container -->
 
 </body>
 
