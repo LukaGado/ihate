@@ -105,10 +105,11 @@ body{
 /* POSTS MRRRRMMRMRRMRMRMRRMMMRM */
 
 .hate-id {
-  background: #FFF;
+  background: #C12E2A;
+  color: #FFF;
   padding: 5px;
   display: inline;
-  border: 1px solid #CCC;
+  border: 1px solid #FFF;
   border-radius: 15px;
 
 }
