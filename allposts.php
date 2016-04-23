@@ -29,6 +29,8 @@
  			echo 'Korisnik: ' . $row['username'] . '<br>';
  			echo 'Objava: ' . $row['post'] . '<br>';
  			echo 'Datum objave: ' . $row['datum'] . '<br>';
+ 			$url = 'comments.php?id='.$row['id'];
+ 			echo '<a href="'.$url.'" title="">Komentari</a>';
  			echo '<form action="allposts.php" method="post" accept-charset="utf-8">
  				  <input type="hidden" value="'.$row['id'].'" name="id">
  				  <input type="submit" value="Obriši" name="delete">
