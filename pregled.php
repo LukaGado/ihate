@@ -87,13 +87,48 @@
                 $result = mysqli_query($db, $sql);
 
                 if (mysqli_num_rows($result) > 0) {
-                // output data of each row
+                // Za svaku objavu
                 while($row = mysqli_fetch_assoc($result)) {
                     echo "Broj objave: " . $row["id"]. "<br> - Objavio: " . $row["username"]. "<br> - Post: " . $row["post"]. "<br>". " - Broj pregleda:". $row['broj_pregleda'] ."<br> - Datum: " . $row['datum'] . "<br>";
                      }
+                    
                 } else {
                     echo "0 objava";
                 }
+
+
+                 //NEXT i PREV buttoni
+                 $url = 'pregled.php?id=' . $id;
+                 $sql = "SELECT * FROM mrznja.postovi WHERE id = (SELECT MAX(id) FROM mrznja.postovi)";
+                 $result = mysqli_query($db, $sql);
+                 if(!$result){
+                  echo 'Ne radi';
+                 }else{
+                    while($row = mysqli_fetch_assoc($result)){
+                      $najveci = $row['id'];
+                      if($id == $najveci){
+                        $id--;
+                        $prev = 'pregled.php?id=' . $id;
+                        echo '<a href="'.$prev.'" title="Previous button">Prijašnji</a>';
+                      }elseif($id == 0){
+                        $next = $id;
+                        $next++;
+                        $urlnext = 'pregled.php?id=' . $next;
+                        echo '<a href="'.$urlnext.'" title="Previous button">Sljedeći</a>';
+                      }else{
+                        $next = $id;
+                        $next++;
+                        $prev = $id;
+                        $prev--;
+                        $nexturl = 'pregled.php?id=' . $next;
+                        $prevurl = 'pregled.php?id=' . $prev;
+                        echo '<a href="'.$nexturl.'" title="Next button">Sljedeći</a>';
+                        echo '<a href="'.$prevurl.'" title="Previous button">Prijašnji</a>';
+                      }
+                    }
+         
+                 }
+
 
                 
              ?>
