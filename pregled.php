@@ -1,6 +1,7 @@
 <?php 
 	// connect to the database
 	include 'includes/db.php';
+    session_start();
      $post_id= $_GET['id'];  // get the post title in a variable     
      $cookie_name = str_replace(" ", "-", $post_id); //create cookie name        
 
