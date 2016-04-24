@@ -42,7 +42,9 @@ include 'includes/db.php';
                   <img src="img/angry-sheep.png" />
                 </div>
 
-                <div style="clear:both;"></div>          
+                <div style="clear:both;"></div> 
+
+                      
         </div>
    <!-- </div> end row -->
 <!--</div> end container -->
