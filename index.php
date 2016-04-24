@@ -38,6 +38,10 @@ include 'includes/db.php';
                 <button class="btn btn-hate btn-lg" type="submit" name="submit"><span class="glyphicon glyphicon-fire"></span> Mrzi!</button>
                 </form>
               </div> <!-- end index-left -->
+                
+                <div class="random-hate col-md-5">
+                  <p>MRMRRMMRMRMRMRMRMRMRMRMMRMRMMRMRMRMRMRMR</p>
+                </div>
                 <div class="right-image col-md-5">
                   <img src="img/angry-sheep.png" />
                 </div>
@@ -48,9 +52,8 @@ include 'includes/db.php';
         </div>
    <!-- </div> end row -->
 <!--</div> end container -->
-
- </body>
  <footer class="hate-footer col-md-offset-1 col-md-8 wrapper">
 
  </footer>
+ </body>
  </html>
