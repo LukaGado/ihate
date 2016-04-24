@@ -4,7 +4,7 @@ include 'includes/db.php';
     
     //Za predaju mržnje
   include 'includes/objava.php';
-  include 'header.html';
+  include 'includes/header.html';
  ?>
 
     <script>
@@ -50,4 +50,7 @@ include 'includes/db.php';
 <!--</div> end container -->
 
  </body>
+ <footer class="hate-footer col-md-offset-1 col-md-8 wrapper">
+
+ </footer>
  </html>

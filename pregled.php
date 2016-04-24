@@ -18,7 +18,7 @@
      mysqli_query($db, $query); 
 
    } 
-   include 'header.html';
+   include 'includes/header.html';
  ?>
 
 

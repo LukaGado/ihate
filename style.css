@@ -154,7 +154,7 @@ body{
 }
 .hate-item {
   background: rgba(248, 248, 248, .4);
-  height: auto;
+  height: 200px;
   max-width: 40%;
   min-width:180px;
   margin: 10px auto;
@@ -220,4 +220,9 @@ body{
   color: #C12E2A;
   background: #FFF;
   border: 1px solid #C12E2A;
+}
+/* FOOTER ------------ */
+.hate-footer {
+  margin-top: 35px;
+  margin-bottom: 0;
 }
