@@ -1,21 +1,17 @@
 <?php 
-	// connect to the database
-	include 'includes/db.php';
+    // connect to the database
+    include 'includes/db.php';
      $post_id= $_GET['id'];  // get the post title in a variable     
      $cookie_name = str_replace(" ", "-", $post_id); //create cookie name        
-
-	//check for the session and cookie  
+    //check for the session and cookie  
      if (!isset($_SESSION[$post_id]) && !isset($_COOKIE [$cookie_name]) ) {         
-
-	//if no cookie and no session then set a cookie and a session for the post
+    //if no cookie and no session then set a cookie and a session for the post
      $_SESSION[$post_id] = $post_id; 
      setcookie($cookie_name, $post_id, time() + (86400 * 7), "/"); // 86400 = 1 day 
      $_COOKIE[$cookie_name] = $post_id;       
-
-	//run a query to increment the views count for the post by 1 
+    //run a query to increment the views count for the post by 1 
      $query="UPDATE mrznja.postovi SET broj_pregleda = broj_pregleda+1 WHERE id ='$post_id'"; 
      mysqli_query($db, $query); 
-
    } 
    include 'header.html';
  ?>
@@ -37,10 +33,8 @@
         <div class="col-md-offset-1 col-md-8 wrapper single-hate">
             <?php 
                 $id = $_GET['id'];
-
                 $sql = "SELECT * FROM mrznja.postovi WHERE id=$id";
                 $result = mysqli_query($db, $sql);
-
                 if (mysqli_num_rows($result) > 0) {
                 // Za svaku objavu
                 while($row = mysqli_fetch_assoc($result)) {
